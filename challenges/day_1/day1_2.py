@@ -1,3 +1,6 @@
+import cProfile
+
+
 def get_list_from_file(filename):
     with open(filename, 'r') as file:
         content = file.read()
@@ -37,4 +40,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    cProfile.run('main()')
