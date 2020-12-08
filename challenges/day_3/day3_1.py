@@ -11,19 +11,16 @@ def main():
     line_len = (len(map) + 1) // n_lines - 1    # last line has not end-of-line
     map = map.replace('\n', '')
 
-    mov_x = 3
-    mov_y = 1
+    mov = (3, 1)
 
-    current_x = 0
-    current_y = 0
+    current = (0, 0)
 
     trees = 0
 
-    for _ in range((n_lines - 1) // mov_y):
-        current_x = (current_x + mov_x) % line_len
-        current_y = (current_y + mov_y) % n_lines
+    for _ in range((n_lines - 1) // mov[1]):
+        current = ((current[0] + mov[0]) % line_len, (current[1] + mov[1]) % n_lines)
 
-        real_position = current_y * line_len + current_x
+        real_position = current[1] * line_len + current[0]
 
         if map[real_position] == '#':
             trees += 1
