@@ -26,7 +26,6 @@ def main():
             if map[real_position] == '#':
                 trees += 1
 
-        print(trees)
         total *= trees
 
     print(total)
